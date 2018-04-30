@@ -1,6 +1,6 @@
 {
   "name": "christianbarkowsky/contao-privacyconsent-bundle",
-  "description": "Contao bundle that adds a privacy policy consent checkbox to the registration",
+  "description": "Adds a privacy policy consent checkbox to the registration.",
   "keywords":["privacy", "Datenschutz", "DSGVO", "registration", "policy"],
   "type": "contao-bundle",
   "license": "LGPL-3.0+",
