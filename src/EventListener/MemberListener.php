@@ -27,7 +27,7 @@ class MemberListener
     /**
      * On load callback
      */
-    public function onLoad()
+    public function onLoad($dc)
     {
         if (TL_MODE == 'FE') {
             $GLOBALS['TL_LANG']['tl_member']['privacyConsent'] = $GLOBALS['TL_LANG']['privacyConsent'];
