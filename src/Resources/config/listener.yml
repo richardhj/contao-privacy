@@ -1,3 +1,4 @@
 services:
     brkwsky_privacy.listener.member_operation:
       class: Brkwsky\PrivacyConsentBundle\EventListener\MemberListener
+      arguments: ["@contao.framework", "@contao.routing.scope_matcher"]

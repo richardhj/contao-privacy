@@ -10,6 +10,9 @@
 
 namespace Brkwsky\PrivacyConsentBundle\EventListener;
 
+use Contao\CoreBundle\Routing\ScopeMatcher;
+use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
+
 /**
  * Class MemberListener
  * @package Brkwsky\PrivacyConsentBundle\EventListener
@@ -18,10 +21,22 @@ class MemberListener
 {
 
     /**
+     * @var ContaoFrameworkInterface
+     */
+    private $framework;
+
+    /**
+     * @var ScopeMatcher
+     */
+    private $scopeMatcher;
+
+    /**
      * MemberListener constructor.
      */
-    public function __construct()
+    public function __construct(ContaoFrameworkInterface $framework, ScopeMatcher $scopeMatcher)
     {
+        $this->framework = $framework;
+        $this->scopeMatcher = $scopeMatcher;
     }
 
     /**
@@ -30,6 +45,9 @@ class MemberListener
     public function onLoad()
     {
         if (TL_MODE == 'FE') {
+            /* @var PageModel $objPage */
+            global $objPage;
+
             $GLOBALS['TL_LANG']['tl_member']['privacyConsent'] = $GLOBALS['TL_LANG']['privacyConsent'];
         }
     }
